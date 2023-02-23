@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App js 🚀</title>
+<link rel="shortcut icon" href="https://i.pinimg.com/originals/77/0b/80/770b805d5c99c7931366c2e84e88f251.png" type="image/x-icon">
+  <link rel="stylesheet" href="index.css">
+  <style>
+
+  </style>
+</head>
+
+<body class="overflow-hidden">
+
+
+  <h1 align="center" class="heading"> Welcome to Awesome <span class="text-primary">Weather App 🚀</span> </h1>
+  <% if(data==null){ %>
+   <h3 align="center" class="warning"> City not found </h3> 
+  <% } %>
+  <div class="main">
+    
+    <div class="left">
+      <form action="/" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <h3>Temperature 🔆</h3>
+              </td>
+              <td>
+
+                <% if(data){ %>
+                  <h2 align="center">
+                    <%=(data.temp- 273.15).toFixed(2) %> <sup>o</sup>C
+                  </h2>
+                  <% } %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Pressure 🔮</h3>
+              </td>
+              <td>
+
+                <% if(data){ %>
+                  <h2 align="center">
+                    <%=data.pressure %>
+                  </h2>
+                  <% } %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h3>Humidity 🐪</h3>
+              </td>
+              <td>
+                <% if(data){ %>
+                  <h2 align="center">
+                    <%=(data.humidity).toFixed(2) %> 
+                  </h2>
+                  <% } %>
+              </td>
+            </tr>
+            
+            <tr class="inp">
+              <td>
+                <input type="text" name="city" placeholder="Enter your city">
+              </td>
+              <td>
+                <button type="submit">Search 🔍</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <div class="right">
+      <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_r2gr83m9.json" background="transparent"
+        speed="1" style="width: 700px; height: 600px;" loop autoplay></lottie-player>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</body>
+
+</html>
